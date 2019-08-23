@@ -121,7 +121,7 @@
     },    
     {
         "ServiceID": "HAIR2",
-        "ServiceName": "Men's Hair Cut",
+        "ServiceName": "Women's Hair Cut",
         "Description": "Women's Hair Cut",
         "Price": "125.00",
         "Minutes": "60",
@@ -129,7 +129,7 @@
     },    
     {
         "ServiceID": "HAIR3",
-        "ServiceName": "Change!",
+        "ServiceName": "Hair change",
         "Description": "We will help you select a new style to completely transform your image!",
         "Price": "210.00",
         "Minutes": "80",
