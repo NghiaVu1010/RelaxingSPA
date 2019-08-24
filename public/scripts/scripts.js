@@ -158,10 +158,19 @@ function validateForm() {
     $("#errDate").empty();
     $("#errName").empty();
 
+    let now = new Date();
+    let startDate = Date.parse($("#reservationDate").val());
+    startDate = new Date(startDate + (1000 * 60 * 60 * 24));
+
     if($("#reservationDate").val() == "") {
         $("#errDate").text("\u2022 Please select a date.")
         .prop("class", "red");
     }
+    else if((startDate - now) < 0) {
+        $("#errDate").text("\u2022 Please pick a future date.")
+        .prop("class", "red");
+    }
+
     if($("#reservationName").val().trim() == "") {
         $("#errName").text("\u2022 Please enter your name.")
         .prop("class", "red");
