@@ -34,7 +34,7 @@ Clone / Fork / Download Repo then run ```npm install```.
 ### Test App (Browser)
 + Ensure Node Server is started! 
 
-[http://localhost:8081](http://localhost:8081).
+[http://localhost:8081/](http://localhost:8081/)
 
 ## Acknowledgments
 
