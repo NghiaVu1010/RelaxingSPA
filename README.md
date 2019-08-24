@@ -1,12 +1,12 @@
-# RelaxingSpa
+# Shangri-Spa
 
 ## Goal
   Shangri-Spa is a website to help you enjoy many different relaxing services. View and find what service that you would like to take and sign up for them easily!
   
 ## Technologies
-  Bootstrap4
-  JavaScript
-  Node.js
+ * Bootstrap4
+ * JavaScript
+ * Node.js
   
 ## Authors
   Neo
