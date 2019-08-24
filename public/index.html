@@ -13,27 +13,30 @@
     
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <link rel="shortcut icon" type="image/png" href="../images/robicon-40x40.png" />
-    <title>Spa Spa</title>
+    <title>Shangri-Spa</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-nav">
-      <a class="navbar-brand obli" id="homeBtn" href="#">Spa Spa</a>
-      
+      <a class="navbar-brand obli" id="homeBtn" href="#">Shangri-Spa</a>
       <div class="navbar-nav ml-auto">
-        <a class="btn btn-info " id="viewServicesBtn" href="#">View Services &raquo;</a>
+        <a class="btn btn-info " id="contactUsBtn" href="#">Contact Us <i class="fas fa-phone"></i></a>
       </div>
     </nav>
 
     <main>
-      <h1 class="obli space-top text-center data-point">Spa Spa</h1>
+      <h1 class="obli space-top text-center data-point">Shangri-Spa</h1>
 
       <!-- Beginning view -->
       <div class="container" id="homeView">
-        <div class="text-center">
+        <header class="text-center">
           <h3>Grand Opening: <span id="countDown"></span></h3>
-          <img src="images/banner_spa.jpg" alt="banner spa" class="rounded" />
-        </div>
+          <img src="images/banner_spa.jpg" alt="banner spa" class="rounded" id="homeImg" />
+          <div class="m-2">
+            <a class="btn btn-info " id="viewServicesBtn" href="#">View Services &raquo;</a>
+          </div>
+        </header>
+
         <!-- Spa information -->
         <div class="row mt-3">
           <div class="col-md-4">
@@ -57,31 +60,79 @@
         </div>
       </div>
 
+      <!-- Drop down selection for categories -->
       <div class="hidden text-center m-4" id="categoryContainer">
         <div class="dropdown">
           <button type="button" class="col-md-2 btn btn-info bold dropdown-toggle" data-toggle="dropdown">Services By Category</button>
-
+          <!-- WILL THROW ERROR WHEN DYNAMICALLY GENERATED, CONFIRMED CLASS ISSUE -->
           <div class="dropdown-menu" id="categoryList"></div>
         </div>
       </div>
 
       <!-- Display service listing section-->
       <section class="hidden container" id="servicesContainer">
-        <h2 id="categoryName">&nbsp;</h2>
-
+        <h2 class="rounded" id="categoryName">&nbsp;</h2>
         <div class="row" id="servicesList"></div>
-
-        <!-- Card of select service -->
-          <!-- <div class="col-md-4 hidden" id="serviceCard">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h4 class="card-title" id="cardTitle">&nbsp;</h4>
-                <p class="card-text" id="cardText1">&nbsp;</p>
-                <p class="card-text" id="cardText2">&nbsp;</p>
-              </div>
-            </div>
-          </div> -->
       </section>
+
+      <!-- Reservation Modal -->
+      <div class="modal fade" tabindex="-1" id="infoModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- WILL THROW WARNING, DYNAMICALLY POPULATED -->
+              <h5 class="modal-title" id="modal-service"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="reserveForm">
+                <!-- TYPE DATE WILL THROW WARNING, NOT SUPPORTED IN ALL BROWSERS -->
+                <div class="form-group">
+                  <label for="reservationDate" class="col-form-label">Please pick a date: </label>
+                  <input type="date" class="form-control" id="reservationDate">
+                  <p id="errDate"></p>
+                </div>
+                <div class="form-group">
+                  <label for="reservationName" class="col-form-label">Please enter your name: </label>
+                  <input type="text" class="form-control" id="reservationName" placeholder="Name...">
+                  <p id="errName"></p>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Special Requests: </label>
+                  <textarea class="form-control" id="message-text" placeholder="Message..."></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" id="cancelModalBtn" data-dismiss="modal">Back</button>
+              <button type="button" class="btn btn-outline-success" id="confirmModalBtn" data-dismiss="modal">Confirm &raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Us modal-->
+      <div class="modal fade" tabindex="-1" id="contactModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Contact Us</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p><i class="fas fa-phone"></i> Phone Number: (555) 555-5555</p>
+              <p><i class="far fa-envelope"></i> Email: ShangriSpa@gmail.com</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" id="exitInfoBtn" data-dismiss="modal">&laquo; Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer id="footer">

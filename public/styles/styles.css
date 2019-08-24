@@ -36,6 +36,10 @@ body {
     background: rgba(128, 128, 128, .5);
 }
 
+.red {
+    color: #ff0000;
+}
+
 #footer {
    position: fixed;
    left: 0;
@@ -44,9 +48,7 @@ body {
    text-align: center;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
+#categoryName {
+    background-color: #ffe6ee;
+    width: 350px;
 }
