@@ -15,13 +15,13 @@ function getCategories() {
         // Loop through each category and assign attr
         $.each(categories, (index, category) => {
             $("#categoryList").append($("<a />")
-            .text(category.Category)
-            .attr("class", "dropdown-item")
-            .attr("href", "#")
-            .on("click", (e) => {
-                e.preventDefault();
-                $("#categoryName").text(category.Category);
-                getServices(category.Value);
+                .text(category.Category)
+                .attr("class", "dropdown-item")
+                .attr("href", "#")
+                .on("click", (e) => {
+                    e.preventDefault();
+                    $("#categoryName").text(category.Category);
+                    getServices(category.Value);
             }));
         });
     });
@@ -44,7 +44,8 @@ function getServices(category) {
             let newCard = createCard(service);
 
             // Appends newly created card and fade in
-            $("#servicesList").append(newCard)
+            $("#servicesList")
+            .append(newCard)
             .hide()
             .fadeIn(200);
 
@@ -88,8 +89,8 @@ function createCard(service) {
     let cardButton = $("<a>", {href: "#", class: "btn btn-info far fa-calendar-check", id: service.ServiceID, text: "  Book Now"});
 
     // Append the body
-    card.append(cardImg);
-    card.append(cardBody);
+    card.append(cardImg)
+        .append(cardBody);
 
     // Append each tag to the body
     cardBody.append(cardTitle)
